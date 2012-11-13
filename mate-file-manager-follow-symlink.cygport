@@ -1,0 +1,17 @@
+inherit mate
+
+NAME="mate-file-manager-follow-symlink"
+VERSION=1.2.0
+RELEASE=1
+CATEGORY="MATE"
+SUMMARY="Caja extension for following directory symlinks"
+DESCRIPTION="caja-follow-symlink is a Caja extension that adds a menu entry on
+symbolic links to directories which open the pointed directory (the real path).
+It does so both when right clicking on a the folder icon or on the contents of
+an opened symbolic link."
+HOMEPAGE="http://p.outlyer.net/nautilus-follow-symlink/"
+SRC_URI="${HOMEPAGE}/files/caja-follow-symlink-${VERSION}.tar.gz"
+SRC_DIR="caja-follow-symlink-${VERSION}"
+PATCH_URI="1.2.0-ldflags.patch"
+
+KEEP_LA_FILES="none"

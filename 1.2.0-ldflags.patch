@@ -1,0 +1,24 @@
+--- origsrc/caja-follow-symlink-1.2.0/configure.ac	2012-08-14 05:54:31.000000000 -0500
++++ src/caja-follow-symlink-1.2.0/configure.ac	2012-11-13 02:18:05.560895600 -0600
+@@ -28,9 +28,7 @@ dnl CPPFLAGS="$CPPFLAGS"
+ # -O2 Showed problems in Fedora 17 (GCC 4.7) (not in previous versions nor in
+ #  Debian's GCC 4.7.1 though (?)
+ #  (solution was adding extern definition of ferror_unlocked
+-CFLAGS="-I\"$PWD/src/caja-layer\" -O2 -Wall -std=gnu99 $CFLAGS"
+-# -z relro -> read-only relocation ld flag
+-LDFLAGS="-Wl,--as-needed -Wl,-z,relro $LDFLAGS"
++CFLAGS="-I\"$srcdir/src/caja-layer\" -O2 -Wall -std=gnu99 $CFLAGS"
+ 
+ # libtool, DISABLE_STATIC should go before PROG_LIBTOOL
+ AM_DISABLE_STATIC
+--- origsrc/caja-follow-symlink-1.2.0/src/Makefile.am	2012-08-14 05:23:11.000000000 -0500
++++ src/caja-follow-symlink-1.2.0/src/Makefile.am	2012-11-13 02:14:20.049986100 -0600
+@@ -17,7 +17,7 @@ libcaja_follow_symlink_la_SOURCES =
+ libcaja_follow_symlink_la_LIBADD = $(CAJA_EXTENSION_LIBS)
+ libcaja_follow_symlink_la_CFLAGS = $(CAJA_EXTENSION_CFLAGS)
+ # There's really no need to have versioned file names
+-libcaja_follow_symlink_la_LDFLAGS = -avoid-version
++libcaja_follow_symlink_la_LDFLAGS = -module -avoid-version -no-undefined
+ # See e.g. <http://www.seul.org/docs/autotut/#libtool> for version instructions
+ #libcaja_follow_symlink_la_LDFLAGS = -version-info 0:0:0
+ 
