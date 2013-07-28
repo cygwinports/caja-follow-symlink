@@ -14,4 +14,6 @@ SRC_URI="${HOMEPAGE}/files/caja-follow-symlink-${VERSION}.tar.gz"
 SRC_DIR="caja-follow-symlink-${VERSION}"
 PATCH_URI="1.2.0-ldflags.patch"
 
+# override '-pedantic-errors' default, with which Pango headers are incompatible
+CPPFLAGS=" "
 KEEP_LA_FILES="none"
