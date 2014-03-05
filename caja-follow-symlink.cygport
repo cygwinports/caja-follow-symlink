@@ -1,8 +1,8 @@
 inherit mate
 
-NAME="mate-file-manager-follow-symlink"
+NAME="caja-follow-symlink"
 VERSION=1.2.0
-RELEASE=1
+RELEASE=2
 CATEGORY="MATE"
 SUMMARY="Caja extension for following directory symlinks"
 DESCRIPTION="caja-follow-symlink is a Caja extension that adds a menu entry on
@@ -11,8 +11,9 @@ It does so both when right clicking on a the folder icon or on the contents of
 an opened symbolic link."
 HOMEPAGE="http://p.outlyer.net/nautilus-follow-symlink/"
 SRC_URI="${HOMEPAGE}/files/caja-follow-symlink-${VERSION}.tar.gz"
-SRC_DIR="caja-follow-symlink-${VERSION}"
 PATCH_URI="1.2.0-ldflags.patch"
+
+OBSOLETES="mate-file-manager-follow-symlink"
 
 # override '-pedantic-errors' default, with which Pango headers are incompatible
 CPPFLAGS=" "
