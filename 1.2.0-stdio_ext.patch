@@ -1,0 +1,11 @@
+--- origsrc/caja-follow-symlink-1.2.0/src/common.h	2012-08-12 22:23:37.000000000 -0500
++++ src/caja-follow-symlink-1.2.0/src/common.h	2015-06-19 03:13:42.381584400 -0500
+@@ -131,7 +131,7 @@
+     /* Debugging facilities */
+ 
+     /* Prefix for messages */
+-    #define FSL_                  "nautilus-follow-symlink: "
++    #define FSL_                  "caja-follow-symlink: "
+ 
+     enum {
+         FINE = 1,

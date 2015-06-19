@@ -1,0 +1,36 @@
+--- origsrc/caja-follow-symlink-1.2.0/src/common.h	2012-08-12 22:23:37.000000000 -0500
++++ src/caja-follow-symlink-1.2.0/src/common.h	2015-06-19 03:13:42.381584400 -0500
+@@ -39,10 +39,10 @@
+ #endif
+ 
+ // Used to allow simpler nautilus/caja code sharing
+-#define NAUTILUS_COMMAND "nautilus"
+-#define FSL_MSG_PREFIX "nautilus-follow-symlink"
++#define NAUTILUS_COMMAND "caja"
++#define FSL_MSG_PREFIX "caja-follow-symlink"
+ 
+-#if 1 // Tricky workaround
++#if 0 // Tricky workaround
+ // I truly have no clue why on earth I need this, but on Fedora 17,
+ //  with GCC 4.7.0, when -O2 is used a "multiple definition" of
+ //  ferror_unlocked will be triggered.
+--- origsrc/caja-follow-symlink-1.2.0/src/nautilus-ext-follow-symlink.c	2012-08-09 18:40:03.000000000 -0500
++++ src/caja-follow-symlink-1.2.0/src/nautilus-ext-follow-symlink.c	2015-06-19 03:16:30.142887400 -0500
+@@ -38,7 +38,7 @@ void nautilus_module_initialize (GTypeMo
+     bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
+     textdomain(GETTEXT_PACKAGE);
+ 
+-    g_printf("Initializing nautilus-follow-symlink extension (v%s)\n", VERSION);
++    g_printf("Initializing caja-follow-symlink extension (v%s)\n", VERSION);
+ 
+     fsl_register_type(module);
+ # if 0
+@@ -52,7 +52,7 @@ void nautilus_module_shutdown (void)
+     TRACE();
+ 
+     /* Module-specific shutdown */
+-    g_print ("Shutting down nautilus-follow-symlink extension\n");
++    g_print ("Shutting down caja-follow-symlink extension\n");
+ }
+ 
+ void nautilus_module_list_types (const GType **types, int *num_types)
