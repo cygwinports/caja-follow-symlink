@@ -2,7 +2,7 @@ inherit mate
 
 NAME="caja-follow-symlink"
 VERSION=1.2.0
-RELEASE=3
+RELEASE=4
 CATEGORY="MATE"
 SUMMARY="Caja extension for following directory symlinks"
 DESCRIPTION="caja-follow-symlink is a Caja extension that adds a menu entry on
